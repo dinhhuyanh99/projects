@@ -1,0 +1,858 @@
+/*Make line height consistant when users change orientation
+on their mobile devices*/
+html{
+	line-height: 1.15;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/*Remove body margin for a more flush experience*/
+body{
+	margin: 0;
+}
+/*Add correct display in IE-9*/
+article, aside, footer, header, nav, section, figcaption, figure, main{
+	display: block;
+}
+/*Add correct margin for IE8*/
+figure{
+	margin: 1em 40px;
+}
+/*Add correct box sizing in Firefox, show overflow in Edge and IE*/
+hr{
+	-webkit-box-sizing: content-box;
+			box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+/*Fix inheritance and scaling of font size in all browsers
+Fix em sizing in all browsers to resolve inconsistencies*/
+pre{
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+/*Remove background of clicked link*/
+a{
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+/*Fix h1 size differences within section and article in Chrome, Firefox, Safari*/
+h1{
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+
+/*Forms modification*/
+
+/*Change font style of button, input, optgroup, select and textarea*/
+/*button, input, optgroup, select, textarea{
+	font-family: sans-serif;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}*/
+/*Show overflow of button in IE*/
+/*button, input{
+	overflow: visible;
+}*/
+
+/*Remove inheritance of text transform in IE and edge, remove
+inconsistencies.*/
+
+/*button, select{
+	text-transform: none;
+}*/
+
+/*Remove issue in WebKit where native 'audio' and 'video'
+encountered unwanted errors in Android 4.x
+Make button clickable in iOS and Safari*/
+
+/*button, html [type="button"], [type="reset"], [type="submit"]{
+	-webkit-appearance: button;
+}
+*/
+/*Remove inner border and padding in Firefox*/
+/*button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner{
+	border-style: none;
+	padding: 0;
+}*/
+
+
+/*Make focus style in Firefox unset by previous rule*/
+/*button::-moz-focusring,
+[type="button"]::-moz-focusring,
+[type="reset"]::-moz-focusring,
+[type="submit"]::-moz-focusring{
+	outline: 1px dotted ButtonText;
+}
+*/
+
+.material-icons{
+	text-rendering: optimizeLegibility;
+	-webkit-font-feature-settings: 'liga';
+	   -moz-font-feature-settings: 'liga';
+	   		font-feature-settings: 'liga';
+}
+
+
+
+/*Define grids for responsiveness*/
+
+.content-container{
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 95%
+}
+
+/*See if the screen is larger than 601pixels but smaller than 993pixels
+in width and 
+adjust the container accordingly for a smooth experience.*/
+@media only screen and (min-width: 601px) {
+	.content-container{
+		width: 90%;	
+	}
+}
+
+/*See if the screen is between 993pixels and 1201pixels*/
+@media only screen and (min-width: 993px){
+	.content-container{
+		width: 85%
+	}
+}
+
+.column .row{
+	margin-left: -0.75rem;
+	margin-right: -0.75rem;
+}
+
+.section{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.section.no-padding{
+	padding: 0;
+}
+
+.section.no-padding-bottom{
+	padding-bottom: 0;
+}
+.section.no-padding-top{
+	padding-top: 0;
+}
+.row{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+.row:after{
+	content:"";
+	display: table;
+	clear: both;
+}
+.row .column{
+	float: left;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+	padding: 0 0.75em;
+	min-height: 1px;
+}
+.row .column[class*="push-"], .row .column[class*="pull-"]{
+	position: relative;
+}
+
+/*Small devices*/
+.row .column .small-1{
+	width: 8.3333333333%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+
+.row .column .small-2{
+	width: 16.6666666667%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+
+.row .column .small-3{
+	width: 25%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-4{
+	width: 33.3333333333%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-5{
+	width: 41.6666666667%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-6{
+	width: 50%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-7{
+	width: 58.3333333333%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-8{
+	width: 66.6666666667%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-9{
+	width: 75%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-10{
+	width: 83.3333333333%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-11{
+	width: 91.6666666667%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+.row .column .small-12{
+	width: 100%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+}
+
+/*Medium sized devices*/
+@media only screen and (min-width: 601px){
+	.row .column .medium-1{
+		width: 8.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .medium-2{
+		width: 16.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .medium-3{
+		width: 25%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-4{
+		width: 33.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-5{
+		width: 41.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-6{
+		width: 50%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-7{
+		width: 58.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-8{
+		width: 66.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-9{
+		width: 75%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-10{
+		width: 83.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-11{
+		width: 91.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .medium-12{
+		width: 100%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+}
+
+/*Larger devices*/
+@media only screen and (min-width: 993px){
+	.row .column .large-1{
+		width: 8.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .large-2{
+		width: 16.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .large-3{
+		width: 25%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-4{
+		width: 33.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-5{
+		width: 41.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-6{
+		width: 50%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-7{
+		width: 58.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-8{
+		width: 66.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-9{
+		width: 75%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-10{
+		width: 83.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-11{
+		width: 91.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .large-12{
+		width: 100%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+}
+
+/*Xtra-large devices*/
+@media only screen and (min-width: 1201px){
+	.row .column .xlarge-1{
+		width: 8.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .xlarge-2{
+		width: 16.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.row .column .xlarge-3{
+		width: 25%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-4{
+		width: 33.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-5{
+		width: 41.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-6{
+		width: 50%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-7{
+		width: 58.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-8{
+		width: 66.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-9{
+		width: 75%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-10{
+		width: 83.3333333333%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-11{
+		width: 91.6666666667%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+	.row .column .xlarge-12{
+		width: 100%;
+		margin-left: auto;
+		left: auto;
+		right: auto;
+	}
+}
+
+
+/*Navbar for the page*/
+
+nav{
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(168, 168, 168, 0.55);
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+}
+
+nav.fixed-nav{
+	position: relative;
+	height: 48px;
+	z-index: 997;
+}
+
+.fixed-nav nav{
+	position: fixed;
+}
+
+nav .extended{
+	height: auto;
+}
+
+nav .extended.with-wrapper{
+	min-height: 48px;
+	height: auto;
+}
+
+nav .extended.content{
+	position: relative;
+	line-height: normal;
+}
+
+nav a{
+	color: #ffffff;
+}
+
+nav i,
+nav [class^="mdi-"], nav [class*="mdi-"],
+nav i.material-icons{
+	display: block;
+	font-size: 24px;
+	height: 48px;
+	line-height: 48px;
+}
+
+nav .with-wrapper{
+	position: relative;
+	height: 100%;
+}
+
+nav .logo{
+	position: absolute;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 2.1rem;
+	padding: 0;
+}
+
+nav .logo .center{
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 992px){
+	nav.logo{
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+	}
+}
+
+nav .logo i,
+nav .logo [class^="mdi-"], nav .logo [class*="mdi-"],
+nav .logo i.material-icons{
+	float: left;
+	margin-right: 20px;
+}
+
+nav .back-trigger{
+	float: left;
+	position: absolute;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 2.1rem;
+	padding: 0;
+	width: 48px;
+	height: 48px;
+	text-align: center;
+}
+
+nav .back-trigger:hover{
+	background-color: rgba(255, 255, 255, 0.65);
+	color: #000000;
+}
+
+nav .back-trigger:active{
+	background-color: rgba(255, 255, 255, 1);
+	color: #000000;
+}
+
+nav .title{
+	display: inline-block;
+	font-size: 32px;
+	padding: 28px 0;
+}
+
+nav ul{
+	margin: 0 0 0 15px;
+	list-style-type: none;
+}
+
+nav ul li{
+	-webkit-transition: background-color .3s;
+			transition: background-color .3s;
+	float: left;
+	padding: 0;
+}
+
+nav ul li .active{
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 1);
+}
+
+nav ul a{
+	-webkit-transition: background-color .3s;
+			transition: background-color .3s;
+	font-size: 1rem;
+	color: #ffffff;
+	display: block;
+	padding: 0 15px;
+	cursor: pointer;
+}
+
+nav ul a .button, nav ul a .button-large, nav ul a .button-small{
+	margin-top: -2px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+nav ul a .button > .material-icons, nav ul a .button-large > .material-icons, nav ul a.button-small > .material-icons{
+	height: inherit;
+	line-height: inherit;
+}
+
+nav ul a:hover{
+	background-color: rgba(255, 255, 255, 0.65);
+	color: rgba(0, 0, 0, 0.90);
+}
+
+nav ul a:active{
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 0.90);
+}
+
+a{
+	text-decoration: none;
+}
+
+html{
+	line-height: 1.5;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0;
+}
+
+h2 {
+  font-size: 3.56rem;
+  line-height: 110%;
+  margin: 2.3733333333rem 0 1.424rem 0;
+}
+
+h3 {
+  font-size: 2.92rem;
+  line-height: 110%;
+  margin: 1.9466666667rem 0 1.168rem 0;
+}
+
+h4 {
+  font-size: 2.28rem;
+  line-height: 110%;
+  margin: 1.52rem 0 0.912rem 0;
+}
+
+h5 {
+  font-size: 1.64rem;
+  line-height: 110%;
+  margin: 1.0933333333rem 0 0.656rem 0;
+}
+
+h6 {
+  font-size: 1.15rem;
+  line-height: 110%;
+  margin: 0.7666666667rem 0 0.46rem 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 500;
+}
+
+small {
+  font-size: 75%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.thin {
+  font-weight: 200;
+}
+
+@media only screen and (min-width: 360px) {
+  .flow-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  .flow-text {
+    font-size: 1.224rem;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  .flow-text {
+    font-size: 1.248rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .flow-text {
+    font-size: 1.272rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .flow-text {
+    font-size: 1.296rem;
+  }
+}
+
+@media only screen and (min-width: 510px) {
+  .flow-text {
+    font-size: 1.32rem;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .flow-text {
+    font-size: 1.344rem;
+  }
+}
+
+@media only screen and (min-width: 570px) {
+  .flow-text {
+    font-size: 1.368rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .flow-text {
+    font-size: 1.392rem;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .flow-text {
+    font-size: 1.416rem;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .flow-text {
+    font-size: 1.44rem;
+  }
+}
+
+@media only screen and (min-width: 690px) {
+  .flow-text {
+    font-size: 1.464rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .flow-text {
+    font-size: 1.488rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .flow-text {
+    font-size: 1.512rem;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .flow-text {
+    font-size: 1.536rem;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  .flow-text {
+    font-size: 1.56rem;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .flow-text {
+    font-size: 1.584rem;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .flow-text {
+    font-size: 1.608rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .flow-text {
+    font-size: 1.632rem;
+  }
+}
+
+@media only screen and (min-width: 930px) {
+  .flow-text {
+    font-size: 1.656rem;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .flow-text {
+    font-size: 1.68rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .flow-text {
+    font-size: 1.2rem;
+  }
+}
