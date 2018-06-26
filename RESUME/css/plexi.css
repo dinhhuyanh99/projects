@@ -1,3 +1,8 @@
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
 /*Make line height consistant when users change orientation
 on their mobile devices*/
 html{
@@ -97,14 +102,22 @@ Make button clickable in iOS and Safari*/
 	   		font-feature-settings: 'liga';
 }
 
-
+/*For background of webpage*/
+.background{
+	background-image: url(http://pixelz.cc/wp-content/uploads/2016/11/annapurna-massif-himalayas-nepal-4k-wallpaper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+}
 
 /*Define grids for responsiveness*/
 
 .content-container{
 	margin: 0 auto;
 	max-width: 1280px;
-	width: 95%
+	width: 90%;
+	padding-top: 48px;
 }
 
 /*See if the screen is larger than 601pixels but smaller than 993pixels
@@ -112,18 +125,18 @@ in width and
 adjust the container accordingly for a smooth experience.*/
 @media only screen and (min-width: 601px) {
 	.content-container{
-		width: 90%;	
+		width: 85%;	
 	}
 }
 
 /*See if the screen is between 993pixels and 1201pixels*/
 @media only screen and (min-width: 993px){
 	.content-container{
-		width: 85%
+		width: 70%
 	}
 }
 
-.column .row{
+.column .row {
 	margin-left: -0.75rem;
 	margin-right: -0.75rem;
 }
@@ -474,6 +487,13 @@ adjust the container accordingly for a smooth experience.*/
 	}
 }
 
+.right{
+	float: right;
+}
+
+.left{
+	float: left;
+}
 
 /*Navbar for the page*/
 
@@ -483,6 +503,7 @@ nav{
 	width: 100%;
 	height: 48px;
 	line-height: 48px;
+	z-index: 997;
 }
 
 nav.fixed-nav{
@@ -569,7 +590,7 @@ nav .back-trigger{
 }
 
 nav .back-trigger:hover{
-	background-color: rgba(255, 255, 255, 0.65);
+	background-color: rgba(255, 255, 255, 0.55);
 	color: #000000;
 }
 
@@ -622,7 +643,7 @@ nav ul a .button > .material-icons, nav ul a .button-large > .material-icons, na
 }
 
 nav ul a:hover{
-	background-color: rgba(255, 255, 255, 0.65);
+	background-color: rgba(255, 255, 255, 0.55);
 	color: rgba(0, 0, 0, 0.90);
 }
 
@@ -855,4 +876,248 @@ small {
   .flow-text {
     font-size: 1.2rem;
   }
+}
+
+
+/*Sidenav*/
+.sidenav{
+	width: 10px;
+	height: 100%;
+	line-height: 48px;
+	background-color: rgba(168, 168, 168, 0.55);
+	color: #ffffff;
+	position: fixed;
+	z-index: 996;
+	top: 48px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	text-overflow: hidden;
+	-webkit-transition: -webkit-ease-in-out .25s;
+	transition: ease-in-out .25s;
+	transition: ease-in-out .25s, -webkit-ease-in-out .25s;
+}
+
+.sidenav:hover{
+	width:300px;
+}
+
+.sidenav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidenav ul li{
+	-webkit-transition: background-color .3s;
+			transition: background-color .3s;
+	float: none;
+	padding: 0;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.sidenav ul li .active{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav ul li i, .sidenav ul li [class^="mdi-"],
+.sidenav ul li [class*="mdi-"], .sidenav ul li i .material-icons{
+	float: left;
+	margin: 10px 10px 10px 10px;
+}
+
+.sidenav ul li a{
+	-webkit-transition: background-color .3s;
+			transition: background-color .3s;
+	font-size: 1rem;
+	color: #ffffff;
+	display: block;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+.sidenav ul li:hover, .sidenav ul li a:hover{
+	background-color: rgba(255, 255, 255, 0.55);
+	color: rgba(0, 0, 0, 0.90);
+}
+
+.sidenav ul li:active, .sidenav ul li a:active {
+	background-color: rgba(255, 255, 255, 1);
+	color: rgba(0, 0, 0, 0.90);
+}
+
+.sidenav ul li .account{
+	margin: 0;
+	padding: 15px;
+}
+
+
+.sidenav ul li .account .account-image{
+	width: 96px;
+	height: 96px;
+	margin-bottom: 15px;
+	position: relative;
+	display: inline-block;
+	border: 1px solid #ffffff;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+.sidenav ul li .account .account-content{
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.sidenav ul li .account .account-action{
+	display: inline-block;
+	width: 100%-72px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+
+.sidenav ul li .account .account-content .account-name{
+	font-weight: 200;
+}
+
+
+.sidenav ul li .divider{
+	margin: 8px 0 0 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.55);
+	line-height: 14px;
+	color: rgba(255, 255, 255, 1);
+}
+
+.sidenav .subheader{
+	cursor: initial;
+	pointer-events: none;
+	color: rgba(255, 255, 255, 0.55);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 48px;
+	margin-left: 15px;
+	width: 100%;
+}
+
+.sidenav .subheader:hover{
+	background-color: transparent;
+}
+
+.plexi-plate{
+	-webkit-transition: -webkit-box-shadow .25s;
+	transition: -webkit-box-shadow .25s;
+	transition: box-shadow .25s;
+	transition: box-shadow .25s, -webkit-box-shadow .25s;
+	padding: 24px;
+	margin: 0.5rem 0 1rem 0;
+	background-color: rgba(168, 168, 168, 0.55);
+}
+
+.plate {
+	position: relative;
+	margin: 0.5rem 0 1rem 0;
+	background-color: rgba(168, 168, 168, 0.55);
+	-webkit-transition: -webkit-box-shadow .25s;
+	transition: -webkit-box-shadow .25s;
+	transition: box-shadow .25s;
+	transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+.plate .plate-title{
+	font-size: 24px;
+	font-weight: 250;
+}
+
+.plate .plate-title.activator{
+	cursor: pointer;
+}
+
+.plate.small, .plate.medium, .plate.large{
+	position: relative;
+}
+
+.plate.small .plate-image, .plate.medium .plate-image, .plate.large .plate-image{
+	max-height: 60%;
+	overflow: hidden;
+}
+
+.plate.small .plate-image + .plate-content, .plate.medium .plate-image + .plate-content, .plate.large .plate-image + .plate-content{
+	max-height: 40%;
+}
+
+
+.plate.small .plate-content, .plate.medium .plate-content, .plate.large .plate-content{
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.plate.small .plate-action, .plate.medium .plate-action, .plate.large .plate-action{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.plate.small {
+	height: 300px;
+}
+
+.plate.medium {
+	height: 400px;
+}
+
+.plate.large {
+	height: 500px;
+}
+
+.plate.horizontal {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.plate.horizontal.small .plate-image, .plate.horizontal.medium .plate-image, .plate.horizontal.large .plate-image {
+	height: 100%;
+	max-height: none;
+	overflow: visible;
+}
+
+.plate.horizontal.small .plate-image img, .plate.horizontal.medium .plate-image img, .plate.horizontal.large .plate-image img{
+	height: 100%;
+}
+
+.plate.horizontal .plate-image{
+	max-width: 50%;
+}
+
+.plate.horizontal .plate-image img{
+	border-radius: 0.5px 0 0 0.5px;
+	max-width: 100%;
+	width: auto;
+}
+
+.plate.horizontal .plate-stacked{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+		-ms-flex: 1;
+			flex: 1;
+	position: relative;
 }
