@@ -1,0 +1,23 @@
+::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-track{
+	background-color: rgba(100, 100, 100, 0.55);
+}
+
+::-webkit-scrollbar-thumb{
+	background-color:rgba(255, 255, 255, 0.85);
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color:rgba(255, 255, 255, 1);
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 250;
+}
+b, strong{
+	font-weight: 350;
+}
+
