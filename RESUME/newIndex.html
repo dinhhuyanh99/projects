@@ -93,7 +93,7 @@
 			<h4 class="blue-text">Thông tin cụ thể</h4>
 			<div class="row">
 				<div class="input-field col s6 m6 l3 xl3">
-					<select>
+					<select id="monthInputField">
 						<option value="Jan">Tháng 1</option>
 						<option value="Feb">Tháng 2</option>
 						<option value="Mar">Tháng 3</option>
@@ -111,13 +111,13 @@
 					<label>Tháng</label>
 				</div>
 				<div class="input-field col s6 m6 l3 xl3">
-					<select>
+					<select id="yearInputField">
 						<option value="2017">2017</option>
 						<option value="2018">2018</option>
 					</select>
 					<label>Năm</label>
 				</div>
-				<a href="#" class="waves-effect waves-ripple btn">Lọc</a>
+				<a class="waves-effect waves-ripple btn blue" onclick="sortByMonthAndYear('monthInputField', 'yearInputField');">Lọc</a>
 			</div>
 			
 
@@ -215,9 +215,6 @@
 		</div>
 	</div>
 
-
-	<script type="text/javascript" src="./js/jquery.js"></script>
-	<script type="text/javascript" src="./angular/angular.js"></script>
 	<script type="text/javascript" src="./js/materialize.js"></script>
 	<script type="text/javascript" src="./js/indexPage.js"></script>
 </body>

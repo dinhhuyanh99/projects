@@ -1,0 +1,11 @@
+{
+  "name": "quanlynhaserver",
+  "version": "1.0.0-alpha",
+  "description": "QuanLyNhaServer",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log('hey there');"
+  },
+  "author": "Dinh Huy Anh",
+  "license": "ISC"
+}
