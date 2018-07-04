@@ -26,6 +26,15 @@ Syntax highlighted code block
 [Link](url) and ![Image](src) -->
 ```
 
-#Hệ Thống Quản Lý Nhà cho thuê
+# Hệ Thống Quản Lý Nhà cho thuê
 -------------------------------
 Changelog:
+3/7/2018:
+	- Added details relating to tenants
+	- Added sorting function to the month and year of the select elements
+
+## To-Do List:
+	- Add index page
+	- Add page to add tenant's details
+	- Add page to add information of a month (Electric bill, water bill, internet bill, air con, ...)
+	- Make it a single page app
