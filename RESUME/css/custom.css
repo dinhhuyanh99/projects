@@ -1,17 +1,52 @@
 ::-webkit-scrollbar{
-	width: 5px;
-	height: 5px;
+	width: 10px;
+	height: 10px;
 }
+
 ::-webkit-scrollbar-track{
-	background-color: rgba(100, 100, 100, 0.55);
+	background-color: rgba(50, 50, 50, 0.55);
 }
 
 ::-webkit-scrollbar-thumb{
-	background-color:rgba(255, 255, 255, 0.85);
+	background-color:rgba(200, 200, 200, 1);
 }
 
 ::-webkit-scrollbar-thumb:hover{
 	background-color:rgba(255, 255, 255, 1);
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid rgba(33, 150, 243, 1);
+  -webkit-box-shadow: 0 1px 0 0 rgba(33, 150, 243, 1);
+          box-shadow: 0 1px 0 0 rgba(33, 150, 243, 1);
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: rgba(33, 150, 243, 1);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -21,3 +56,34 @@ b, strong{
 	font-weight: 350;
 }
 
+
+.datepicker-date-display{
+	background-color: rgba(33, 150, 243, 1);
+}
+.datepicker-table td.is-today{
+	color: rgba(33, 150, 243, 1);
+}
+.datepicker-table td.is-selected{
+	background-color: rgba(33, 150, 243, 1);
+	color: rgba(255, 255, 255, 1);
+}
+
+.datepicker-day-button:focus{
+	background-color: rgba(33, 150, 243, 0.25);
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done{
+	color: rgba(33, 150, 243, 1);
+}
+
+.datepicker-controls.month-next:focus,
+.datepicker-controls.month-prev:focus{
+	background-color: rgba(33, 150, 243, 0.50);
+}
+
+.table-container{
+	overflow-x:scroll;
+}

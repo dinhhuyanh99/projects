@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quản Lý Nhà</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./css/materialize.css" media="screen, projection">
+	<link rel="stylesheet" href="./css/custom.css" media="screen, projection">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper blue">
+				<a href="index.html" class="brand-logo"><img src="./images/logo/if_Streamline-18_185038.svg" alt="quan_ly_nha_logo" style="filter:invert(1); margin: 5px 0 0 5px;"></a>
+				<a data-target="page-option" class="sidenav-trigger waves-effect waves-ripple waves-circle"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="modal-trigger" href="#login-modal">Đăng Nhập</a></li>
+					<li><a class="btn green white-text waves-effect waves-ripple waves-light" href="tenant.html"><i class="material-icons left">add_box</i> Thêm người thuê</a></li>
+					<li><a class="btn red darken-2 white-text waves-effect waves-ripple waves-light"><i class="material-icons left">videocam</i> Camera</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+	</header>
+	<ul class="sidenav" id="page-option">
+		<li><a class="waves-effect waves-ripple waves-dark modal-trigger" data-target="login-modal">Đăng Nhập</a></li>
+		<li><a class="waves-effect waves-ripple waves-dark" href="tenant.html"><i class="material-icons left">add_box</i> Thêm người thuê</a></li>
+		<li><a class="waves-effect waves-ripple waves-dark"><i class="material-icons left">videocam</i> Camera</a></li>
+	</ul>
+	
+	<div class="container">
+		<div class="modal" id="login-modal">
+			<div class="modal-content">
+				<h5 class="blue-text">Đăng Nhập</h5>
+				<div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix blue-text">account_circle</i>
+						<input type="text" id="username-field">
+						<label for="username-field">Username</label>
+					</div>
+					<div class="input-field col s12">
+						<i class="material-icons prefix blue-text">vpn_key</i>
+						<input type="password" id="password-field">
+						<label for="password-field">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<a class="btn blue white-text waves-effect waves-ripple waves-light">Đăng nhập</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="blue-text">Thông tin người thuê</h3>
+			<form>
+				<div class="row">
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="text" placeholder="Ví dụ: Nguyễn Văn A" id="name-of-tenant" autocomplete="name">
+						<label for="name-of-tenant">Tên người thuê</label>
+					</div>
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="text" class="datepicker" id="date-of-birth">
+						<label for="date-of-birth">Ngày tháng năm sinh</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="text" placeholder="Ví dụ: 0123192578" id="phone-number" autocomplete="tel-national">
+						<label for="personal-id">Số điện thoại</label>
+					</div>
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="number" placeholder="Số chứng minh thư nhân dân" id="personal-id">
+						<label for="personal-id">Số chứng minh thư</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea class="materialize-textarea" id="address" placeholder="Thông tin về nơi ở của người thuê" autocomplete="street-address"></textarea>
+						<label for="address">Địa chỉ nơi ở</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="text" class="datepicker" id="start-of-contract">
+						<label for="start-of-contract">Ngày bắt đầu hợp đồng</label>
+					</div>
+					<div class="input-field col s12 m12 l6 xl6">
+						<input type="number" id="length-of-contract">
+						<label for="length-of-contract">Thời gian thuê (Tháng)</label>
+					</div>
+				</div>
+			</form>
+			<a class="btn waves-effect waves-ripple waves-light blue" onclick="gatherTenantDetails();" id="add-tenant">Tiếp <i class="material-icons right">navigate_next</i></a>
+			<a class="btn waves-effect waves-ripple waves-light green" id="update-tenant">Cập nhật <i class="material-icons right">autorenew</i></a>
+		</div>
+		<div id="room-selector" class="modal">
+			<div class="modal-content">
+				<h4 class="blue-text">Chọn phòng để thêm người thuê...</h4>
+
+			</div>
+			<div class="modal-footer">
+				<a>Hủy</a>
+				<a onclick=""></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/materialize.min.js"></script>
+	<script type="text/javascript" src="./js/tenantDetails.js"></script>
+</body>
+</html>

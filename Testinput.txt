@@ -1,0 +1,29 @@
+{
+	"roomId" : "5b46fbcee8647e419c0f004c",
+  	"name": "Huy Anh Nguyen",
+  	"dateOfBirth": "1999/08/12",
+  	"phoneNumber": "01292120899",
+  	"personalId": "013598975",
+  	"homeAddress": "Số nhà 2B ngõ 81 Pháo Đài Láng",
+  	"startOfContractDate": "2018/02/23",
+  	"lengthOfContract": "20"
+}
+
+5b4700992b3749215042c9c9
+
+
+{
+	"roomName": "Phòng 202",
+  	"numberOfTenants": "2",
+  	"price": "3000000"
+}
+
+
+{
+	"roomId" : "5b4700992b3749215042c9c9",
+  	"month": "Feb",
+  	"year": "2018",
+  	"prevNumber": "201",
+  	"currentNumber": "245",
+  	"overallElectricFee": "2000"
+}

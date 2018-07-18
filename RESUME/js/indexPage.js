@@ -1,54 +1,36 @@
-
 document.addEventListener('DOMContentLoaded', function(){
-	var currentUrl = window.location.href;
-	var selectFields = document.querySelectorAll('select');
-	var instanceSelectFields = M.FormSelect.init(selectFields);
-
-	// Split url into partitions for adding attribute to select element
-	var splittedCurrentUrl = currentUrl.split('/');
-	var queryPartUrl = splittedCurrentUrl[splittedCurrentUrl.length - 1].split('?');
-	var selectedMonth = queryPartUrl[queryPartUrl.length - 1].substring(5, 8);
-	var selectedYear = queryPartUrl[queryPartUrl.length - 1].substring(8, 12);
-	
-	var monthInput = document.getElementById('monthInputField');
-	var yearInput = document.getElementById('yearInputField');
-
-	var monthSelectWrapper = document.getElementsByClassName('select-wrapper')[0];
-	console.log(monthSelectWrapper.children[1]);
-
-	for(var i = 0; i < monthInput.options.length; i++){
-		if(monthInput.options[i].value == selectedMonth){
-			
-		}
-	}
-
-	var collectionItemDescClass = document.getElementsByClassName('collection-item-description');
-	for(var i = 0; i < collectionItemDescClass.length; i++){
-		collectionItemDescClass[i].style.display = 'none';
-	}
+	M.Sidenav.init(document.querySelectorAll('.sidenav'));
+	M.Modal.init(document.querySelectorAll('.modal'));
 });
 
-function collectionItemShowMoreInfo(targetID){
-	var selectedItem = document.getElementById(targetID);
-	if(selectedItem.getElementsByClassName('collection-item-description')[0].style.display == 'none'){
-		selectedItem.getElementsByClassName('collection-item-description')[0].style.display = '';
-		selectedItem.getElementsByClassName('material-icons')[0].innerHTML = "expand_less";
-	} else {
-		selectedItem.getElementsByClassName('collection-item-description')[0].style.display = 'none';
-		selectedItem.getElementsByClassName('material-icons')[0].innerHTML = "expand_more";
+function accessRoomDetails(roomNumber){
+	var accessedDate = new Date();
+	var sortString = '';
+	if(accessedDate.getMonth() == 0){
+		sortString += 'Dec' + (accessedDate.getFullYear() - 1);
+	} else if(accessedDate.getMonth() == 1){
+		sortString += 'Jan' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 2){
+		sortString += 'Feb' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 3){
+		sortString += 'Mar' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 4){
+		sortString += 'Apr' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 5){
+		sortString += 'May' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 6){
+		sortString += 'Jun' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 7){
+		sortString += 'Jul' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 8){
+		sortString += 'Aug' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 9){
+		sortString += 'Sep' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 10){
+		sortString += 'Oct' + accessedDate.getFullYear();
+	} else if(accessedDate.getMonth() == 11){
+		sortString += 'Nov' + accessedDate.getFullYear();
 	}
-}
-
-function sortByMonthAndYear(monthInput, yearInput){
-	var monthInput = document.getElementById(monthInput);
-	var month = monthInput.options[monthInput.selectedIndex].value;
-	var yearInput = document.getElementById(yearInput);
-	var year = yearInput.options[yearInput.selectedIndex].value;
-	var currentUrl = window.location.href;
-	if(currentUrl.indexOf('?') > -1){
-		currentUrl += ('&sort=' + month + year);
-	} else {
-		currentUrl += ('?sort=' + month + year);
-	}
-	window.location.href = currentUrl;
+	var newUrl = "room-detail.html?room=" + roomNumber + '&sort=' + sortString;
+	window.location.href = newUrl;
 }

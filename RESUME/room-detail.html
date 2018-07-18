@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Quản Lý Nhà</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./css/materialize.css" media="screen, projection">
+	<link rel="stylesheet" href="./css/custom.css" media="screen, projection">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper blue">
+				<a href="index.html" class="brand-logo"><img src="./images/logo/if_Streamline-18_185038.svg" alt="quan_ly_nha_logo" style="filter:invert(1); margin: 5px 0 0 5px;"></a>
+				<a data-target="page-option" class="sidenav-trigger waves-effect waves-ripple waves-circle"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="modal-trigger" href="#login-modal">Đăng Nhập</a></li>
+					<li><a class="btn green white-text waves-effect waves-ripple waves-light" href="tenant.html"><i class="material-icons left">add_box</i> Thêm người thuê</a></li>
+					<li><a class="btn red darken-2 white-text waves-effect waves-ripple waves-light"><i class="material-icons left">videocam</i> Camera</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+	</header>
+	<ul class="sidenav" id="page-option">
+		<li><a class="waves-effect waves-ripple waves-dark modal-trigger" data-target="login-modal">Đăng Nhập</a></li>
+		<li><a class="waves-effect waves-ripple waves-dark" href="tenant.html"><i class="material-icons left">add_box</i> Thêm người thuê</a></li>
+		<li><a class="waves-effect waves-ripple waves-dark"><i class="material-icons left">videocam</i> Camera</a></li>
+	</ul>
+
+	<div class="container">
+		<div class="modal" id="login-modal">
+			<div class="modal-content">
+				<h5 class="blue-text">Đăng Nhập</h5>
+				<div class="row">
+					<form>
+						<div class="input-field col s12">
+							<i class="material-icons prefix blue-text">account_circle</i>
+							<input type="text" id="username-field">
+							<label for="username-field">Username</label>
+						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix blue-text">vpn_key</i>
+							<input type="password" id="password-field">
+							<label for="password-field">Password</label>
+						</div>
+					</form>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<a class="btn blue white-text waves-effect waves-ripple waves-light">Đăng nhập</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row" id="short-description">
+			<h3 class="blue-text">Phòng <span id="room-number-detail"></span></h3>
+			<div class="col s12 m5 l5 xl5">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title"><b>Thông tin phòng</b></span>
+						<h6>Số người thuê </h6><span>3</span>
+						<h6>Số điện phát sinh tháng gần nhất </h6><span>135</span>
+						<h6>Số nước phát sinh tháng gần nhất </h6><span>7</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m7 l7 xl7">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title"><b>Thống kê</b></span>
+						<canvas id="bill-chart" width="100%" height="100%"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="detail-description">
+			<h4 class="blue-text">Thông tin cụ thể</h4>
+			<div class="row">
+				<div class="input-field col s6 m6 l3 xl3">
+					<select id="monthInputField">
+						<option value="Jan">Tháng 1</option>
+						<option value="Feb">Tháng 2</option>
+						<option value="Mar">Tháng 3</option>
+						<option value="Apr">Tháng 4</option>
+						<option value="May">Tháng 5</option>
+						<option value="Jun">Tháng 6</option>
+						<option value="Jul">Tháng 7</option>
+						<option value="Aug">Tháng 8</option>
+						<option value="Sep">Tháng 9</option>
+						<option value="Oct">Tháng 10</option>
+						<option value="Nov">Tháng 11</option>
+						<option value="Dec">Tháng 12</option>
+
+					</select>
+					<label>Tháng</label>
+				</div>
+				<div class="input-field col s6 m6 l3 xl3">
+					<select id="yearInputField">
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+					</select>
+					<label>Năm</label>
+				</div>
+				<a class="waves-effect waves-ripple btn blue" onclick="sortByMonthAndYear('monthInputField', 'yearInputField');">Lọc</a>
+			</div>
+			
+
+			<div class="detail-description-content">
+				<div class="row" id="latest-fee">
+					<h6 class="black-text">Thông tin điện nước</h6>
+					<div class="divider"></div>
+					<div class="col s12 m6 l6 xl6" id="electro-feed">
+						<div class="card">
+							<div class="card-content">
+								<h6 class="card-title"><b>Số điện <span id="month-electro-bill"></span> Năm <span id="year-electro-bill"></span></b></h6>
+								<table class="responsive-table">
+									<thead>
+										<tr>
+											<th>Số đầu</th>
+											<th>Số cuối</th>
+											<th>Số phát sinh</th>
+											<th>Tổng tiền</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1837</td>
+											<td>1972</td>
+											<td>135</td>
+											<td>567,000 Đ</td>
+										</tr>
+									</tbody>
+								</table>									
+							</div>
+							<div class="card-action">
+								<a>Xem chi tiết</a>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m6 l6 xl6" id="water-feed">
+						<div class="card">
+							<div class="card-content">
+								<h6 class="card-title"><b>Số nước <span id="month-water-bill"></span> Năm <span id="year-water-bill"></span></b></h6>
+								<table class="responsive-table">
+									<thead>
+										<tr>
+											<th>Số đầu</th>
+											<th>Số sau</th>
+											<th>Số phát sinh</th>
+											<th>Tổng tiền</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>149</td>
+											<td>156</td>
+											<td>7</td>
+											<td>175,000 Đ</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="card-action">
+								<a>Xem chi tiết</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row" id="tenant-details">
+					<!-- Tên, số đt, số CMND, địa chỉ -->
+					<h6 class="black-text">Thông tin người thuê</h6>
+					<ul class="collection">
+						<li class="collection-item avatar" id="item1">
+							<img src="./images/assets/account.png" alt="account-image" class="circle">
+							<span class="title"><span>Tên:</span> <b id="name-of-tenant">Huyền</b></span>
+							<p><b>Ngày tháng năm sinh:</b> <span id="date-of-birth">20/4/1954</span></p>
+							<p><b>Số điện thoại:</b> <span id="phone-number">0123456789</span></p>
+							<div class="secondary-content right">
+								<a onclick="editTenantDetails('item1');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">edit</i></a>
+								<a class="expand-collection-item" onclick="collectionItemShowMoreInfo('item1');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">expand_more</i></a>
+							</div>
+							<div class="collection-item-description">
+								<p><b>Số chứng minh thư:</b> <span id="personal-id">12376549182</span></p>
+								<p><b>Địa chỉ:</b> <span id="tenant-home-address">2B ngõ 81, Pháo Đài Láng</span></p>
+								<p><b>Ngày bắt đầu thuê:</b> <span id="start-of-contract">12/02/2018</span></p>
+								<p><b>Thời hạn hợp đồng:</b> <span id="length-of-contract">6 tháng</span></p>
+							</div>
+						</li>
+						<li class="collection-item avatar" id="item2">
+							<img src="./images/assets/account.png" alt="account-image" class="circle">
+							<span class="title"><span>Tên:</span> <b id="name-of-tenant">Anh</b></span>
+							<p><b>Ngày tháng năm sinh:</b> <span id="date-of-birth">20/4/1954</span></p>
+							<p><b>Số điện thoại:</b> <span id="phone-number">0123456789</span></p>
+							<div class="secondary-content right">
+								<a onclick="editTenantDetails('item2');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">edit</i></a>
+								<a class="expand-collection-item" onclick="collectionItemShowMoreInfo('item2');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">expand_more</i></a>
+							</div>
+							
+							<div class="collection-item-description">
+								<p><b>Số chứng minh thư:</b> <span id="personal-id">12376549182</span></p>
+								<p><b>Địa chỉ:</b> <span id="tenant-home-address">2B ngõ 81, Pháo Đài Láng</span></p>
+								<p><b>Ngày bắt đầu thuê:</b> <span id="start-of-contract">12/02/2018</span></p>
+								<p><b>Thời hạn hợp đồng:</b> <span id="length-of-contract">6 tháng</span></p>
+							</div>
+						</li>
+						<li class="collection-item avatar" id="item3">
+							<img src="./images/assets/account.png" alt="account-image" class="circle">
+							<span class="title"><span>Tên:</span> <b id="name-of-tenant">Trang</b></span>
+							<p><b>Ngày tháng năm sinh:</b> <span id="date-of-birth">20/4/1954</span></p>
+							<p><b>Số điện thoại:</b> <span id="phone-number">0123456789</span></p>
+							<div class="secondary-content right">
+								<a onclick="editTenantDetails('item3');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">edit</i></a>
+								<a class="expand-collection-item" onclick="collectionItemShowMoreInfo('item3');"><i class="material-icons black-text waves-effect waves-ripple waves-dark">expand_more</i></a>
+							</div>
+							<div class="collection-item-description">
+								<p><b>Số chứng minh thư:</b> <span id="personal-id">12376549182</span></p>
+								<p><b>Địa chỉ:</b> <span id="tenant-home-address">2B ngõ 81, Pháo Đài Láng</span></p>
+								<p><b>Ngày bắt đầu thuê:</b> <span id="start-of-contract">12/02/2018</span></p>
+								<p><b>Thời hạn hợp đồng:</b> <span id="length-of-contract">6 tháng</span></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/materialize.min.js"></script>
+	<script type="text/javascript" src="./js/roomDetail.js"></script>
+	<script type="text/javascript" src="./js/Chart.min.js"></script>
+</body>
+</html>
